@@ -1,0 +1,13 @@
+body{
+  font-family: 'Lato';
+}
+.container{
+  display: flex;
+}
+.btns{
+  background-color: brown;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 15px ;
+}
