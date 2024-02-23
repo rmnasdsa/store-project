@@ -1,5 +1,7 @@
 import { products } from "./Data";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ImHeart } from "react-icons/im";
 const Main = () => {
 
   return (
@@ -13,7 +15,10 @@ const Main = () => {
           </div>
         ))}
       </div>
-
+      <Link to='/shop' target="_black" className="link">click for shopping here</Link>
+      <p style={{ textAlign: 'center', fontSize: '20px' }}> 
+            thanks for your trust <ImHeart /><ImHeart /> </p>
+      
     </>
   )
  }

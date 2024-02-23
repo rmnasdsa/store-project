@@ -9,6 +9,24 @@ body{
   color: white;
   border: none;
   border-radius: 10px;
-  padding: 6px 15px ;
-  margin-left: 50px;
+  padding: 7px 20px ;
+  /* margin-left: 50px; */
+  cursor: pointer;
+}
+.products-btns{
+  border: none;
+  padding: 7px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  color: white;
+  background-color: darkgray;
+  /* margin:20px 50px; */
+}
+.link{
+  text-decoration: none;
+  color: blue;
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+  text-align: center;
 }
