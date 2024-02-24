@@ -72,12 +72,51 @@ const ShoppingCart = () => {
       //  productName.splice(productName.length - 1, lastItem, count[0]--);
       count[0]--;
       setProductName([...productName, products[0].name, count[0]]);
+      if (count[0] < 1) {  
+        setProductName([...productName]);
       
+      }
+    }
+    if (id == 2) {
+      count[1]--;
+      setProductName([...productName, products[1].name, count[1]]);
+      if (count[1] < 1) {  
+        setProductName([...productName]);
+      
+      }
+    }
+    if (id == 3) {
+      count[2]--;
+      setProductName([...productName, products[2].name, count[2]]);
+      if (count[2] < 1) {  
+        setProductName([...productName]);
+      
+      }
+    }
+    if (id == 4) {
+      count[3]--;
+      setProductName([...productName, products[3].name, count[3]]);
+      if (count[3] < 1) {  
+        setProductName([...productName]);
+      
+      }
+    }
+    if (id == 5) {
+      count[4]--;
+      setProductName([...productName, products[4].name, count[4]]);
+      if (count[4] < 1) {  
+        setProductName([...productName]);
+      
+      }
     }
   }
   const handleClick = (id) => {
     if (id == 1) {
       count[0]++;
+      if (count[0] == 0) {
+        count[0]++;
+        setProductName([...productName, products[0].name, count[0]]);
+      }
       setProductName([...productName, products[0].name, count[0]]);
       setProductImage([products[0].img]);
       setProductCost([...productCost, products[0].cost]);
@@ -85,6 +124,10 @@ const ShoppingCart = () => {
     }
     if (id == 2) {
       count[1]++;
+      if (count[1] == 0) {
+        count[1]++;
+        setProductName([...productName, products[1].name, count[1]]);
+      }
       setProductName([...productName, products[1].name, count[1]]);
       setProductImage([products[1].img]);
       setProductCost([...productCost, products[1].cost]);
@@ -92,6 +135,10 @@ const ShoppingCart = () => {
     }
     if (id == 3) {
       count[2]++;
+      if (count[2] == 0) {
+        count[2]++;
+        setProductName([...productName, products[2].name, count[2]]);
+      }
       setProductName([...productName, products[2].name, count[2]]);
       setProductImage([products[2].img]);
       setProductCost([...productCost, products[2].cost]);
@@ -99,6 +146,10 @@ const ShoppingCart = () => {
     }
     if (id == 4) {
       count[3]++;
+      if (count[3] == 0) {
+        count[3]++;
+        setProductName([...productName, products[3].name, count[3]]);
+      }
       setProductName([...productName, products[3].name, count[3]]);
       setProductImage([products[3].img]);
       setProductCost([...productCost, products[3].cost]);
@@ -106,6 +157,10 @@ const ShoppingCart = () => {
     }
     if (id == 5) {
       count[4]++;
+      if (count[4] == 0) {
+        count[4]++;
+        setProductName([...productName, products[4].name, count[4]]);
+      }
       setProductName([...productName, products[4].name, count[4]]);
       setProductImage([products[4].img]);
       setProductCost([...productCost, products[4].cost]);
