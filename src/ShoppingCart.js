@@ -14,17 +14,27 @@ const ShoppingCart = () => {
 
   const remove = (id) => {
     if (id == 1) {
+
+      const find = productName.find((name) => {
+        return name == count[0];
+      })
+      console.log(find);
       const filter = productName.filter((name) => {
-        // console.log(name[0])
-        return name !== products[0].name;
+        // console.log(name[0]);
+        // const counter = productName.includes(count[0]);
+        // console.log(counter);
+        count[0] = 0;
+        return (name !== products[0].name && name !== find);
       })
       console.log(filter);
       setProductName(filter);
-      // setProductName([...productName ,null, null])
+      // setProductName([...productName ,null, null]);
       const index = productName.findIndex((name) => {
         return name == products[0].name;
       });
       console.log(index);
+     
+     
     }
     if (id == 2) {
       const filter = productName.filter((name) => {
@@ -49,6 +59,20 @@ const ShoppingCart = () => {
         return name !== products[4].name;
       })
       setProductName(filter);
+    }
+  }
+  const reduce = (id) => {
+    if (id == 1) {
+      
+      const lastItem = productName[productName.length - 1];
+      // const index = productName.indexOf((name) => {
+      //   return 0
+      // });
+      // console.log(index);
+      //  productName.splice(productName.length - 1, lastItem, count[0]--);
+      count[0]--;
+      setProductName([...productName, products[0].name, count[0]]);
+      
     }
   }
   const handleClick = (id) => {
@@ -88,10 +112,9 @@ const ShoppingCart = () => {
       setStatus(true);
     }
     console.log(productName)
-    // console.log(productCost)
   }
 
-
+  
   // for (let i = 0; i < productName.length; i++){
   //   if (productName.includes(products[0].name)) {
   //     count++;
@@ -118,12 +141,12 @@ const ShoppingCart = () => {
       <button className="products-btns" onClick={() => handleClick(5)}>women's bag</button><br></br>
       {products.map(({id}) => (
         <>
-          <button className="change-items" style={{fontSize:"18px"}} >-</button>
+          <button className="change-items" style={{fontSize:"18px"}} onClick={() => reduce(id)}>-</button>
           <button className="change-items" style={{fontSize:"15px"}} onClick={() => remove(id)}>X</button>
         </>
       ))}
       {/* <img src={status ? productImage : ""} style={{width: '250px',height:'240px'}}></img> */}
-      {status ? <h1 style={{ width: '300px' }} className="same-changes">{`${[...productName]}`} </h1> : null}
+      {status ? <h1 style={{ width: '300px' }} className="same-changes">{`${productName}`} </h1> : null}
       
       <p className="same-changes">{status ? `${productCost} $` : null}</p>
       <button className="btns" onClick={() => {
