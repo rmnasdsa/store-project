@@ -5,7 +5,7 @@ body{
   display: flex;
 }
 .btns{
-  background-color: brown;
+  background-color: darkblue;
   color: white;
   border: none;
   border-radius: 10px;
@@ -20,6 +20,7 @@ body{
   cursor: pointer;
   color: white;
   background-color: darkgray;
+  margin: 2px;
   /* margin:20px 50px; */
 }
 .link{
