@@ -25,7 +25,7 @@ const ShoppingCart = () => {
       // console.log(index);
       const indexOf = productName.indexOf(count[0]);
       console.log(indexOf);
-      const filter = productName.filter((name) => {
+      const filterProductName = productName.filter((name) => {
         // console.log(name[0]);
         // const counter = productName.includes(count[0]);
         // console.log(counter);
@@ -34,43 +34,63 @@ const ShoppingCart = () => {
         // && name !== productName[index + 1]
       })
       // console.log(filter);
-      setProductName(filter);
+      setProductName(filterProductName);
       // setProductName([...productName ,null, null]);
-
+      const filterProductCost = productCost.filter((cost) => {
+        return cost !== products[0].cost;
+      });
+      setProductCost([filterProductCost, 0]);
      
      
     }
     if (id == 2) {
       const indexOf = productName.indexOf(count[1]);
-      const filter = productName.filter((name) => {
+      const filterProductName = productName.filter((name) => {
         count[1] = 0;
         return (name !== products[1].name && name !== productName[indexOf]);
       })
-      setProductName(filter);
+      setProductName(filterProductName);
+      const filterProductCost = productCost.filter((cost) => {
+        return cost !== products[1].cost;
+      });
+      setProductCost([filterProductCost, 0]);
     }
     if (id == 3) {
       const indexOf = productName.indexOf(count[2]);
-      const filter = productName.filter((name) => {
+      const filterProductName = productName.filter((name) => {
         count[2] = 0;
         return (name !== products[2].name && name !== productName[indexOf]);
       })
-      setProductName(filter);
+      setProductName(filterProductName);
+      const filterProductCost = productCost.filter((cost) => {
+        return cost !== products[2].cost;
+      });
+      setProductCost([filterProductCost, 0]);
+     
     }
     if (id == 4) {
       const indexOf = productName.indexOf(count[3]);
-      const filter = productName.filter((name) => {
+      const filterProductName = productName.filter((name) => {
         count[3] = 0;
         return (name !== products[3].name && name !== productName[indexOf]);
       })
-      setProductName(filter);
+      setProductName(filterProductName);
+      const filterProductCost = productCost.filter((cost) => {
+        return cost !== products[3].cost;
+      });
+      setProductCost([filterProductCost, 0]);
     }
     if (id == 5) {
       const indexOf = productName.indexOf(count[4]);
-      const filter = productName.filter((name) => {
+      const filterProductName = productName.filter((name) => {
         count[4] = 0;
         return (name !== products[4].name && name !== productName[indexOf]);
       })
-      setProductName(filter);
+      setProductName(filterProductName);
+      const filterProductCost = productCost.filter((cost) => {
+        return cost !== products[4].cost;
+      });
+      setProductCost([filterProductCost, 0]);
     }
   }
   const reduce = (id) => {
@@ -88,14 +108,27 @@ const ShoppingCart = () => {
         setProductName([...productName]);
       
       }
+      const index = productCost.findIndex((cost) => {
+        return cost === products[0].cost;
+      });
+      productCost.splice(index, 1);
     }
     if (id == 2) {
       count[1]--;
       setProductName([...productName, products[1].name, count[1]]);
-      if (count[1] < 1) {  
+      if (count[1] < 1) {
         setProductName([...productName]);
       
-      }
+      };
+      const index = productCost.findIndex((cost) => {
+        return cost === products[1].cost;
+      });
+      // console.log(index)
+      // const filter = productCost.filter((cost) => {
+      //   return cost !== productCost[index];
+      // });
+      // setProductCost(filter);
+      productCost.splice(index, 1);
     }
     if (id == 3) {
       count[2]--;
@@ -104,6 +137,10 @@ const ShoppingCart = () => {
         setProductName([...productName]);
       
       }
+      const index = productCost.findIndex((cost) => {
+        return cost === products[2].cost;
+      });
+      productCost.splice(index, 1);
     }
     if (id == 4) {
       count[3]--;
@@ -112,6 +149,10 @@ const ShoppingCart = () => {
         setProductName([...productName]);
       
       }
+      const index = productCost.findIndex((cost) => {
+        return cost === products[3].cost;
+      });
+      productCost.splice(index, 1);
     }
     if (id == 5) {
       count[4]--;
@@ -120,6 +161,10 @@ const ShoppingCart = () => {
         setProductName([...productName]);
       
       }
+      const index = productCost.findIndex((cost) => {
+        return cost === products[4].cost;
+      });
+      productCost.splice(index, 1);
     }
   }
   const handleClick = (id) => {
