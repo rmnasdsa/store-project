@@ -9,7 +9,8 @@ const ShoppingCart = () => {
   const [productImage, setProductImage] = useState();
   const [productCost, setProductCost] = useState([]);
   let [sum, setSum] = useState(0);
-  let [count, setCount] = useState([0,0,0,0,0]);
+  let [count, setCount] = useState([0, 0, 0, 0, 0]);
+  let [mount, setMount] = useState([0, 0, 0, 0, 0]);
   let [status, setStatus] = useState([true,true,true,true,true]);
 
   const remove = (id) => {
@@ -23,207 +24,275 @@ const ShoppingCart = () => {
       //   return name == products[0].name;
       // });
       // console.log(index);
-      const indexOf = productName.indexOf(count[0]);
-      console.log(indexOf);
-      const filterProductName = productName.filter((name) => {
-        // console.log(name[0]);
-        // const counter = productName.includes(count[0]);
-        // console.log(counter);
-        count[0] = 0;
-        return (name !== products[0].name && name !== productName[indexOf]);
-        // && name !== productName[index + 1]
-      })
+      // const indexOf = productName.indexOf(products[0].name);
+      // console.log(indexOf);
+      // const indexOfCount = productName.indexOf(count[0]);
+      // const different = indexOfCount - indexOf;
+      // productName.splice(indexOf, different)
+      // const filterProductName = productName.filter((name) => {
+      //   // console.log(name[0]);
+      //   // const counter = productName.includes(count[0]);
+      //   // console.log(counter);
+      //   count[0] = 0;
+      //   return (name !== products[0].name);
+      //   // && name !== productName[index + 1]
+      // })
       // console.log(filter);
-      setProductName(filterProductName);
-      // setProductName([...productName ,null, null]);
-      const filterProductCost = productCost.filter((cost) => {
-        return cost !== products[0].cost;
-      });
-      setProductCost([filterProductCost, 0]);
      
-     
+      // setProductName(filterProductName);
+      // productName.splice(indexOf, 1);
+      productName.map(({ name }) => {
+        if (name === products[0].name) {
+          count[0] = 0;
+          name = 'item removed';
+          setProductName([{ name: name, count: '' }])
+        }
+        //console.log(name);
+      })
+  
+      // const filterProductCost = productCost.filter((cost) => {
+      //   return cost !== products[0].cost;
+      // });
+      // setProductCost([filterProductCost]);
+      // productCost.filter(({ cost ,count}) => {
+      //   return cost !== products[0].cost;
+      // })
+
+      // const index = productCost.findIndex((product) => {
+      //   return product.cost === products[0].cost;
+      // })
+      // console.log(index);
+      // productCost.splice(index, 1);
+
+      const filter = productCost.filter((product) => {
+        mount[0] = 0;
+        return product.cost !== products[0].cost;
+      })
+      setProductCost(filter);
+      console.log(productCost);
     }
     if (id == 2) {
-      const indexOf = productName.indexOf(count[1]);
-      const filterProductName = productName.filter((name) => {
-        count[1] = 0;
-        return (name !== products[1].name && name !== productName[indexOf]);
+      productName.map(({ name }) => {
+        if (name === products[1].name) {
+          count[1] = 0;
+          name = 'item removed';
+          setProductName([{name:name, count:''}])
+        }
       })
-      setProductName([]);
-      const filterProductCost = productCost.filter((cost) => {
-        return cost !== products[1].cost;
-      });
-      setProductCost([filterProductCost, 0]);
+      const filter = productCost.filter((product) => {
+        mount[1] = 0;
+        return product.cost !== products[1].cost;
+      })
+      setProductCost(filter);
     }
     if (id == 3) {
-      const indexOf = productName.indexOf(count[2]);
-      const filterProductName = productName.filter((name) => {
-        count[2] = 0;
-        return (name !== products[2].name && name !== productName[indexOf]);
+      productName.map(({ name }) => {
+        if (name === products[2].name) {
+          count[2] = 0;
+          name = 'item removed';
+          setProductName([{name:name, count:''}])
+         }
       })
-      setProductName(filterProductName);
-      const filterProductCost = productCost.filter((cost) => {
-        return cost !== products[2].cost;
-      });
-      setProductCost([filterProductCost, 0]);
+      const filter = productCost.filter((product) => {
+        mount[2] = 0;
+        return product.cost !== products[2].cost;
+      })
+      setProductCost(filter);
      
     }
     if (id == 4) {
-      const indexOf = productName.indexOf(count[3]);
-      const filterProductName = productName.filter((name) => {
-        count[3] = 0;
-        return (name !== products[3].name && name !== productName[indexOf]);
+      productName.map(({ name }) => {
+        if (name === products[3].name) {
+          count[3] = 0;
+          name = 'item removed';
+          setProductName([{name:name, count:''}])
+         }
       })
-      setProductName(filterProductName);
-      const filterProductCost = productCost.filter((cost) => {
-        return cost !== products[3].cost;
-      });
-      setProductCost([filterProductCost, 0]);
+      const filter = productCost.filter((product) => {
+        mount[3] = 0;
+        return product.cost !== products[3].cost;
+      })
+      setProductCost(filter);
     }
     if (id == 5) {
-      const indexOf = productName.indexOf(count[4]);
-      const filterProductName = productName.filter((name) => {
-        count[4] = 0;
-        return (name !== products[4].name && name !== productName[indexOf]);
+      productName.map(({ name }) => {
+        if (name === products[4].name) {
+          count[4] = 0;
+          name = 'item removed';
+          setProductName([{name:name, count:''}])
+         }
       })
-      setProductName(filterProductName);
-      const filterProductCost = productCost.filter((cost) => {
-        return cost !== products[4].cost;
-      });
-      setProductCost([filterProductCost, 0]);
+      const filter = productCost.filter((product) => {
+        mount[4] = 0;
+        return product.cost !== products[4].cost;
+      })
+      setProductCost(filter);
     }
   }
   const reduce = (id) => {
     if (id == 1) {
       
-      const lastItem = productName[productName.length - 1];
+      //const lastItem = productName[productName.length - 1];
       // const index = productName.indexOf((name) => {
       //   return 0
       // });
       // console.log(index);
       //  productName.splice(productName.length - 1, lastItem, count[0]--);
-      count[0]--;
-      setProductName([...productName, products[0].name, count[0]]);
-      if (count[0] < 1) {  
-        setProductName([...productName]);
-      
+      if (count[0] > 1) {
+        count[0]--;
+        setProductName([{name: products[0].name,count: count[0]}]);
       }
-      const index = productCost.findIndex((cost) => {
-        return cost === products[0].cost;
-      });
-      productCost.splice(index, 1);
+      const filter = productCost.filter((product) => {
+        console.log(product);
+        return product.cost !== products[0].cost;
+      })
+      console.log(filter);
+      //console.log(mount[0])
+       if (mount[0] > 1) {
+         mount[0]--;
+         filter.push({ cost: products[0].cost, count: mount[0] });
+        setProductCost(filter);
+      }
+      // if (count[0] < 1) {  
+      //   console.log('please press remove button...')
+        
+      // }
+      // const index = productCost.findIndex((cost) => {
+      //   return cost === products[0].cost;
+      // });
+      // productCost.splice(index, 1);
     }
     if (id == 2) {
-      count[1]--;
-      setProductName([...productName, products[1].name, count[1]]);
-      if (count[1] < 1) {
-        setProductName([...productName]);
+      if (count[1] > 1) {
+        count[1]--;
+        setProductName([{name: products[1].name,count: count[1]}]);
+      }
       
-      };
-      const index = productCost.findIndex((cost) => {
-        return cost === products[1].cost;
-      });
+      const filter = productCost.filter((product) => {
+        console.log(product);
+        return product.cost !== products[1].cost;
+      })
+       if (mount[1] > 1) {
+         mount[1]--;
+         filter.push({ cost: products[1].cost, count: mount[1] });
+        setProductCost(filter);
+      }
       // console.log(index)
       // const filter = productCost.filter((cost) => {
       //   return cost !== productCost[index];
       // });
       // setProductCost(filter);
-      productCost.splice(index, 1);
+      //productCost.splice(index, 1);
     }
     if (id == 3) {
-      count[2]--;
-      setProductName([...productName, products[2].name, count[2]]);
-      if (count[2] < 1) {  
-        setProductName([...productName]);
-      
+      if (count[2] > 1) {
+        count[2]--;
+        setProductName([{name: products[2].name,count: count[2]}]);
       }
-      const index = productCost.findIndex((cost) => {
-        return cost === products[2].cost;
-      });
-      productCost.splice(index, 1);
+      const filter = productCost.filter((product) => {
+        console.log(product);
+        return product.cost !== products[2].cost;
+      })
+       if (mount[2] > 1) {
+         mount[2]--;
+         filter.push({ cost: products[2].cost, count: mount[2] });
+        setProductCost(filter);
+      }
     }
     if (id == 4) {
-      count[3]--;
-      setProductName([...productName, products[3].name, count[3]]);
-      if (count[3] < 1) {  
-        setProductName([...productName]);
-      
+      if (count[3] > 1) {
+        count[3]--;
+        setProductName([{name: products[3].name,count: count[3]}]);
       }
-      const index = productCost.findIndex((cost) => {
-        return cost === products[3].cost;
-      });
-      productCost.splice(index, 1);
+      const filter = productCost.filter((product) => {
+        console.log(product);
+        return product.cost !== products[3].cost;
+      })
+       if (mount[3] > 1) {
+         mount[3]--;
+         filter.push({ cost: products[3].cost, count: mount[3] });
+        setProductCost(filter);
+      }
     }
     if (id == 5) {
-      count[4]--;
-      setProductName([...productName, products[4].name, count[4]]);
-      if (count[4] < 1) {  
-        setProductName([...productName]);
-      
+      if (count[4] > 1) {
+        count[4]--;
+        setProductName([{name: products[4].name,count: count[4]}]);
       }
-      const index = productCost.findIndex((cost) => {
-        return cost === products[4].cost;
-      });
-      productCost.splice(index, 1);
+      const filter = productCost.filter((product) => {
+        console.log(product);
+        return product.cost !== products[4].cost;
+      })
+       if (mount[4] > 1) {
+         mount[4]--;
+         filter.push({ cost: products[4].cost, count: mount[4] });
+        setProductCost(filter);
+      }
     }
   }
   const handleClick = (id) => {
     if (id == 1) {
       count[0]++;
+      mount[0]++;
       if (count[0] == 0) {
         count[0]++;
-        setProductName([ products[0].name, count[0]]);
+        setProductName([ {name :products[0].name, count: count[0]}]);
       }
-      setProductName([ products[0].name, count[0]]);
+      setProductName([  {name :products[0].name, count: count[0]}]);
       setProductImage([products[0].img]);
-      setProductCost([...productCost, products[0].cost]);
+      setProductCost([...productCost, {cost:products[0].cost,count:mount[0]}]);
       
     }
     if (id == 2) {
+      mount[1]++;
       count[1]++;
       if (count[1] == 0) {
         count[1]++;
-        setProductName([ products[1].name, count[1]]);
+        setProductName([  {name :products[1].name, count: count[1]}]);
       }
-      setProductName([ products[1].name, count[1]]);
+      setProductName([  {name :products[1].name, count: count[1]}]);
       setProductImage([products[1].img]);
-      setProductCost([...productCost, products[1].cost]);
+      setProductCost([...productCost, {cost:products[1].cost,count:mount[1]}]);
       
     }
     if (id == 3) {
+      mount[2]++;
       count[2]++;
       if (count[2] == 0) {
         count[2]++;
-        setProductName([ products[2].name, count[2]]);
+        setProductName([ {name :products[2].name, count: count[2]}]);
       }
-      setProductName([ products[2].name, count[2]]);
+      setProductName([  {name :products[2].name, count: count[2]}]);
       setProductImage([products[2].img]);
-      setProductCost([...productCost, products[2].cost]);
+      setProductCost([...productCost, {cost:products[2].cost,count:mount[2]}]);
       
     }
     if (id == 4) {
+      mount[3]++;
       count[3]++;
       if (count[3] == 0) {
         count[3]++;
-        setProductName([ products[3].name, count[3]]);
+        setProductName([  {name :products[3].name, count: count[3]}]);
       }
-      setProductName([ products[3].name, count[3]]);
+      setProductName([ {name :products[3].name, count: count[3]}]);
       setProductImage([products[3].img]);
-      setProductCost([...productCost, products[3].cost]);
+      setProductCost([...productCost, {cost:products[3].cost,count:mount[3]}]);
       
     }
     if (id == 5) {
+      mount[4]++;
       count[4]++;
       if (count[4] == 0) {
         count[4]++;
-        setProductName([ products[4].name, count[4]]);
+        setProductName([  {name :products[4].name, count: count[4]}]);
       }
-      setProductName([ products[4].name, count[4]]);
+      setProductName([ {name :products[4].name, count: count[4]}]);
       setProductImage([products[4].img]);
-      setProductCost([...productCost, products[4].cost]);
+      setProductCost([...productCost, {cost:products[4].cost,count:mount[4]}]);
       
     }
-    console.log(productName)
+    //console.log(productName)
+    console.log(productCost);
   }
 
 
@@ -295,15 +364,27 @@ const ShoppingCart = () => {
         </>) : null}
         </>
       ))}
-      {/* <img src={status ? productImage : ""} style={{width: '250px',height:'240px'}}></img> */}
-      {status ? <h1 style={{ width: '300px' }} className="same-changes">{`${productName}`} </h1> : null}
-      
-      <p className="">{status ? `${productCost} $` : null}</p>
-      <button className="btns" onClick={() => {
-        productCost.map((cost) => {
-          sum += cost;
-          setSum(sum)
+        {/* <img src={status ? productImage : ""} style={{width: '250px',height:'240px'}}></img> */}
+        {productName.map(({name, count}) => {
+          return <>
+            <h1 style={{ width: '300px' }} className="same-changes">{`${name} ${count}`} </h1>
+          
+          </>
+        })}
+        <div style={{ display: "flex"}}>
+          {productCost.map(({cost,count}) => (
+            <>
+              <p style={{margin:'10px'}}>{`${cost} $ ${count}x`}</p>
+            </>
+          ))}
+        </div>
+        <button className="btns" onClick={() => {
+          sum = 0;
+          productCost.map(({ cost, count }) => {
+          sum += cost * count;
+          setSum(sum);
           })
+          
         // console.log(sum)
       }}>sum</button>
       <h4 className="same-changes payments">{ sum} $</h4>
