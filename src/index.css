@@ -42,3 +42,10 @@
 .header-width{
   width: 80px;
 }
+.search-input{
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 10px 0 0;
+}

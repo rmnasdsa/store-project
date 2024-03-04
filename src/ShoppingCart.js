@@ -334,7 +334,7 @@ const ShoppingCart = () => {
     <div className="header-img"></div>
     <div className="shop">
         <h1 className="same-changes header-width">shop</h1>
-        <input type="text" onChange={findProducts}/>
+        <input type="text" onChange={findProducts} placeholder="search products..." className="search-input"/>
         <h3 className="same-changes guide-text">please choose your favorite products below</h3>
        {status[0] ? <button className="products-btns" onClick={() => handleClick(1)}>duffel bag</button> : null}
         {status[1] ?<button className="products-btns" onClick={() => handleClick(2)}>work bag</button> : null} 
@@ -371,7 +371,7 @@ const ShoppingCart = () => {
           
           </>
         })}
-        <div style={{ display: "flex"}}>
+        <div style={{ display: "flex",marginLeft:'25%'}}>
           {productCost.map(({cost,count}) => (
             <>
               <p style={{margin:'10px'}}>{`${cost} $ ${count}x`}</p>
