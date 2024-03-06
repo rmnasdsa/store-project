@@ -240,7 +240,11 @@ const ShoppingCart = () => {
       }
       setProductName([  {name :products[0].name, count: count[0]}]);
       setProductImage([products[0].img]);
-      setProductCost([...productCost, {cost:products[0].cost,count:mount[0]}]);
+      const filter = productCost.filter((product) => {
+        return product.cost !== products[0].cost;
+      })
+      filter.push({cost:products[0].cost,count:mount[0]})
+      setProductCost(filter);
       
     }
     if (id == 2) {
@@ -252,7 +256,11 @@ const ShoppingCart = () => {
       }
       setProductName([  {name :products[1].name, count: count[1]}]);
       setProductImage([products[1].img]);
-      setProductCost([...productCost, {cost:products[1].cost,count:mount[1]}]);
+      const filter = productCost.filter((product) => {
+        return product.cost !== products[1].cost;
+      })
+      filter.push({cost:products[1].cost,count:mount[1]})
+      setProductCost(filter);
       
     }
     if (id == 3) {
@@ -264,7 +272,11 @@ const ShoppingCart = () => {
       }
       setProductName([  {name :products[2].name, count: count[2]}]);
       setProductImage([products[2].img]);
-      setProductCost([...productCost, {cost:products[2].cost,count:mount[2]}]);
+      const filter = productCost.filter((product) => {
+        return product.cost !== products[2].cost;
+      })
+      filter.push({cost:products[2].cost,count:mount[2]})
+      setProductCost(filter);
       
     }
     if (id == 4) {
@@ -276,8 +288,11 @@ const ShoppingCart = () => {
       }
       setProductName([ {name :products[3].name, count: count[3]}]);
       setProductImage([products[3].img]);
-      setProductCost([...productCost, {cost:products[3].cost,count:mount[3]}]);
-      
+      const filter = productCost.filter((product) => {
+        return product.cost !== products[3].cost;
+      })
+      filter.push({cost:products[3].cost,count:mount[3]})
+      setProductCost(filter);  
     }
     if (id == 5) {
       mount[4]++;
@@ -288,8 +303,11 @@ const ShoppingCart = () => {
       }
       setProductName([ {name :products[4].name, count: count[4]}]);
       setProductImage([products[4].img]);
-      setProductCost([...productCost, {cost:products[4].cost,count:mount[4]}]);
-      
+      const filter = productCost.filter((product) => {
+        return product.cost !== products[4].cost;
+      })
+      filter.push({cost:products[4].cost,count:mount[4]})
+      setProductCost(filter); 
     }
     //console.log(productName)
     console.log(productCost);
